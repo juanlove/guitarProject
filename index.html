@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Juan Urena Portfolio</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link href='https://fonts.googleapis.com/css?family=Bitter:400,400italic' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>a
+	<![endif]-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript" src="http://www.queness.com/js/bsa.js"></script>
+	
+	<script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+				});				
+			
+			},
+			
+			hoverEffect: function () {
+			
+				// Simple parallax effect
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+					}		
+				);				
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+	</script>
+
+</head>
+<body>
+
+<!-- <header class="header">
+    <img src="images/avatar.png" width="100" height="100" class="avatar" />
+    <h1>Hello, I'm Juan Urena. <br />I'm a designer living in Southern California.</h1>
+</header> -->
+
+<div id="info">
+	<div class="info-wrapper">
+		<header class="header">
+    		<img src="img/profile.png" width="100" height="100" class="avatar" />
+    		<h1>Hello, I'm Juan Urena. <br />I'm a designer living in Southern California.</h1>
+		</header>
+	</div>
+</div>	
+
+<!-- <div id="info">
+	<div class="info-wrapper">
+		<a href="http://www.queness.com/post/14577/create-a-simple-responsive-portfolio-page-with-filtering-and-hover-effect"><b>Juan Love</b></a>
+		<p>BLAH <a href="http://www.queness.com/post/14577/create-a-simple-responsive-portfolio-page-with-filtering-and-hover-effect">click if this gets broken</a></p>
+	</div>
+</div>	-->
+
+
+	<div class="container">
+
+		<ul id="filters" class="clearfix">
+			<li><span class="filter active" data-filter="paint card icon logo web contact">All</span></li>
+			<li><span class="filter" data-filter="paint">Digital Painting</span></li>
+			<li><span class="filter" data-filter="card">Package Design</span></li>
+			<li><span class="filter" data-filter="icon">Illustrator</span></li>
+			<li><span class="filter" data-filter="logo">Motion Graphics</span></li>
+			<li><span class="filter" data-filter="contact">Contact Me</span></li>
+		</ul>
+
+		<div id="portfoliolist">
+			
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">			
+					<a href="steph.html"><img src="img/portfolios/paint/6.jpg"/></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Portrait</a>
+							<span class="text-category">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>	
+
+
+			<div class="portfolio card" data-cat="card">
+				<div class="portfolio-wrapper">			
+					<a href="product.html"><img src="img/portfolios/ill/6.jpg" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Art Supplies</a>
+							<span class="text-category">Package Design</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>	
+
+			<div class="portfolio icon" data-cat="icon">
+				<div class="portfolio-wrapper">			
+					<a href="myLogo.html"><img src="img/portfolios/ill/3.jpg"/></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Logo Design</a>
+							<span class="text-category">Illustrator</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio logo" data-cat="logo">
+				<div class="portfolio-wrapper">			
+					<a href="guitarVid.html"><img src="img/portfolios/vid/1.jpg" alt="" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Guitar Tutorial</a>
+							<span class="text-category">Motion Graphics</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>						
+
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">			
+					<img src="img/portfolios/paint/1.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Sphere</a>
+							<span class="text-category">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>		
+			
+			<div class="portfolio icon" data-cat="icon">
+				<div class="portfolio-wrapper">						
+					<img src="img/portfolios/ill/1.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">College Flyer</a>
+							<span class="text-category">Illustrator</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>				
+			
+			<div class="portfolio card" data-cat="card">
+				<div class="portfolio-wrapper">			
+					<img src="img/portfolios/ill/4.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Package Design</a>
+							<span class="text-category">Pens</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>	
+						
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">
+					<img src="img/portfolios/paint/3.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Movie Poster</a>
+							<span class="text-category">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>			
+			
+			
+			
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">			
+					<a href="kmonster.html"><img src="img/portfolios/paint/4.jpg"/></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Concept Design</a>
+							<span class="text-category">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>	
+																										
+			
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">			
+					<a href="bluewoman.html"><img src="img/portfolios/paint/2.jpg" alt="" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Portrait</a>
+							<span class="text-category">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>														
+			
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">				
+					<a href="pikachu.html"><img src="img/portfolios/paint/5.jpg" alt="" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Pikachu</a>
+							<span class="text-category" date-filter="app">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>			
+																
+
+			<div class="portfolio logo" data-cat="logo">
+				<div class="portfolio-wrapper">			
+					<img src="img/portfolios/vid/2.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Title Sequence</a>
+							<span class="text-category">Motion Graphics</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>													
+			
+			<div class="portfolio icon" data-cat="icon">
+				<div class="portfolio-wrapper">			
+					<img src="img/portfolios/ill/2.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Apple Icons</a>
+							<span class="text-category">Illustrator</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>							
+
+			<div class="portfolio card" data-cat="card">
+				<div class="portfolio-wrapper">						
+					<img src="img/portfolios/ill/5.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Package Design</a>
+							<span class="text-category">Prototype</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>																								
+		
+								
+			
+			<div class="portfolio logo" data-cat="logo">
+				<div class="portfolio-wrapper">			
+					<img src="img/portfolios/vid/3.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Quick Six Sequences</a>
+							<span class="text-category">Motion Graphics</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>																	
+
+			<div class="portfolio paint" data-cat="paint">
+				<div class="portfolio-wrapper">			
+					<a href="zombie.html"><img src="img/portfolios/paint/7.jpg" alt="" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Concept Art</a>
+							<span class="text-category">Digital Painting</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>	
+
+			<div class="portfolio contact" data-cat="contact">
+				<div class="portfolio-wrapper">				
+					<a href="http://www.facebook.com/juan.urena" target="_blank"><img src="img/contact/1.jpg" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Find me @</a>
+							<span class="text-category" date-filter="app">facebook.com/juanurena</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio contact" data-cat="contact">
+				<div class="portfolio-wrapper">				
+					<a href="http://www.instagram.com/juanlove__" target="_blank"><img src="img/contact/2.jpg" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Find me @</a>
+							<span class="text-category" date-filter="app">instagram.com/juanlove__</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio contact" data-cat="contact">
+				<div class="portfolio-wrapper">				
+					<img src="img/contact/3.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Find me @</a>
+							<span class="text-category" date-filter="app">youtube.com/juanlove</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio contact" data-cat="contact">
+				<div class="portfolio-wrapper">				
+					<a href="lineplay.html"><img src="img/contact/5.jpg" alt="" /></a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Heart me @</a>
+							<span class="text-category" date-filter="app">Line Play Cast</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+
+										
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
